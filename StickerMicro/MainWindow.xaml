@@ -32,10 +32,18 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
+                    <ListBox x:Name="lsbListOfAllMediaForEd" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="448,62,10,35"/>
+                    <TextBox x:Name="txbNameOfMedia" HorizontalAlignment="Left" Height="24" Margin="12,73,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txbNameOfAbriviation" HorizontalAlignment="Left" Margin="173,73,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="109" Height="24"/>
+                    <Label Content="Naam van media:" HorizontalAlignment="Left" Height="26" Margin="12,42,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Afkorting" HorizontalAlignment="Left" Margin="173,42,0,0" VerticalAlignment="Top" Width="109"/>
+                    <Button x:Name="btnAddMedia1" Content="Voeg Toe" HorizontalAlignment="Left" Margin="308,68,0,0" VerticalAlignment="Top" Height="34" Width="107"/>
                 </Grid>
             </TabItem>
             <TabItem x:Name="tbiArchive" HorizontalAlignment="Center" Height="20" Header="Archief" VerticalAlignment="Center" Width="54">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <ListBox x:Name="lsbArchief" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,44,0,0"/>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>
