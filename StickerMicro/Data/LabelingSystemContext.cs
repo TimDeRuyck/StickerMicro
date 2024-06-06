@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StickerMicro.core.Data
+namespace StickerMicro
 {
     public class LabelingSystemContext : DbContext
     {
@@ -22,6 +22,9 @@ namespace StickerMicro.core.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<MediaType>().HasKey(mt => mt.MediaId);
+            modelBuilder.Entity<PrintLabel>().HasKey(pl => pl.LabelId);
+            modelBuilder.Entity<PrintLabel>().HasOne(pl => pl.MediaType).WithMany(mt => mt.PrintLabels).HasForeignKey(pl => pl.MediaId);
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<MediaType>().HasData(
