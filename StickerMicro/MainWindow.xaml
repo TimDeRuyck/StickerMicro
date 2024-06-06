@@ -1,0 +1,42 @@
+﻿<Window x:Class="StickerMicro.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StickerMicro"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl x:Name="tbcMain">
+            <TabItem x:Name="tbiHead" Header="Printen">
+                <Grid Background="#FFE5E5E5">
+                    <ComboBox x:Name="cmbMedia" HorizontalAlignment="Left" Margin="38,47,0,0" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txbNumberOfMedia" HorizontalAlignment="Left" Margin="194,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" Height="22"/>
+                    <Button x:Name="btnAddMedia" Content="Voeg Toe" HorizontalAlignment="Left" Margin="329,49,0,0" VerticalAlignment="Top" Width="68"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="38,23,0,0" TextWrapping="Wrap" Text="Kies je media:" VerticalAlignment="Top" Height="24" Width="83"/>
+                    <TextBlock x:Name="txbAmountOfBottles" HorizontalAlignment="Left" Height="24" Margin="194,23,0,0" TextWrapping="Wrap" Text="Aantal flessen:" VerticalAlignment="Top" Width="84"/>
+                    <ListView x:Name="lstAddedItems" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,83,397,68">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button x:Name="btnPrint" Content="Print" HorizontalAlignment="Left" Margin="138,0,0,10" Width="132" Height="53" VerticalAlignment="Bottom"/>
+                    <ListBox x:Name="lsbListOfAllMedia" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="448,66,10,31"/>
+                    <Button x:Name="btnRemove" Content="Verwijder" HorizontalAlignment="Left" Margin="14,355,0,0" VerticalAlignment="Top" Height="29" Width="66"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tbiMedia" Header="Media">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tbiArchive" HorizontalAlignment="Center" Height="20" Header="Archief" VerticalAlignment="Center" Width="54">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
