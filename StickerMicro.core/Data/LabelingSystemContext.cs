@@ -15,5 +15,9 @@ namespace StickerMicro.core.Data
 
         public DbSet<Entities.MediaType> MediaTypes { get; set; }
         public DbSet<Entities.PrintLabel> PrintLabels { get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+           optionsBuilder.UseSqlite("Data Source=LabelingSystem.db");
+        }
     }
 }
