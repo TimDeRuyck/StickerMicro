@@ -13,6 +13,6 @@ namespace StickerMicro.core.Entities
         public string MediaCode { get; set; }
         public string MediaName { get; set; }
         public int ShelfLife { get; set; }
-        public List<Label> Labels { get; set; }
+        public List<PrintLabel> PrintLabels { get; set; }
     }
 }
